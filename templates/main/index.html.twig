@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello MainController!
+{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Matiere</th>
+					<th scope="col">Note</th>
+					<th scope="col">Date</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for data in list %}
+					<tr>
+						<th scope="row">{{data.id}}</th>
+						<td>{{data.Matiere}}</td>
+						<td>{{data.note}}</td>
+						<td>{{data.date}}</td>
+						<td>
+							<a class="btn btn-warning" href="{{ path('update',{'id':date.id}) }}">
+								Update
+								<a/>
+								<a class="btn btn-danger" href="{{ path('delete',{'id':date.id}) }}">
+									Delete
+									<a/>
+								</td>
+							</td>
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</tr>
+	</tbody>
+</tbody></table></div>{% endblock %}

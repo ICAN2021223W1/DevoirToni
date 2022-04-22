@@ -1,0 +1,36 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+	<div class="container">
+		<div class="row">
+			<h3 class="mt-5 mb-5">Formulaire
+			</h3>
+			{% for message in app.flashes('notice') %}
+				<div class"alert alert-succes">
+					{{ message }}
+				</div>
+			{% endfor %}
+			<div class="col-md-6 offset-md-3">
+				{{ form_start(form) }}
+				<div class="form-group">
+					{{form_label(form.Matiere)}}
+					{{ form_widget(form.Matiere,{'attr':{'class':'form-control'}})}}
+				</div>
+				<div class="form-group">
+					{{form_label(form.note)}}
+					{{ form_widget(form.note,{'attr':{'class':'form-control'}})}}
+				</div>
+				<div class="form-group">
+					{{form_label(form.date)}}
+					{{ form_widget(form.date,{'attr':{'class':'form-control'}})}}
+				</div>
+				<div class="form-group">
+					<button class="btn btn-info mt-2 text-white">
+						Update
+					</button>
+				</div>
+				{{ form_end(form)}}
+			</div>
+		</div>
+	</div>
+{% endblock %}
